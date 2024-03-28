@@ -1,0 +1,11 @@
+<div class="col">
+  <%= form_with url: search_path,local:false, method: :get do |f| %>
+
+      <%= f.date_field :search_date %>
+      <%= f.hidden_field :type, value: "book" %>
+      <%= f.hidden_field :user_id, value: user.id %>
+      <%= f.hidden_field :search_type, value: "date" %>
+      <%= f.submit "検索" %>
+
+  <% end %>
+</div>

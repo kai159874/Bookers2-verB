@@ -9,7 +9,11 @@
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
       <%= render 'books/index',books: @books %>
-      <%= render 'books_count_days',books: @books %>
+      <div id="book_count">
+        <%= render 'users/books_count_search',books: @books, user: @user %>
+      </div>
+      <div id="search_result">
+      </div>
     </div>
   </div>
 </div>

@@ -1,3 +1,5 @@
+<%= @book_count %>
+
 <% if @type == "book" %>
   <h2>Books search for "<%= @search %>"</h2>
   <%= render "books/index", books: @books %>

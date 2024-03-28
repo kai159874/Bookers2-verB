@@ -1,6 +1,10 @@
 class SearchesController < ApplicationController
 
   def search
+    if params[:search_type] == "date"
+      @user = User.find(params[:user_id])
+      @book_count = @user.books.where(created_at: params[:search_date].in_time_zone.all_day).count
+    end
     @type = params[:type]
     @search = params[:search]
     if params[:type] == "book"
@@ -25,5 +29,5 @@ class SearchesController < ApplicationController
       end
     end
   end
-  
+
 end
