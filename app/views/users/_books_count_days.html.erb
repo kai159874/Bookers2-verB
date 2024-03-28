@@ -10,13 +10,13 @@
     <th>今日</th>
   </tr>
   <tr>
-    <th><%= @book_count_6day_ago %></th>
-    <th><%= @book_count_5day_ago %></th>
-    <th><%= @book_count_4day_ago %></th>
-    <th><%= @book_count_3day_ago %></th>
-    <th><%= @book_count_2day_ago %></th>
-    <th><%= @book_count_1day_ago %></th>
-    <th><%= @book_count_day %></th>
+    <th><%= @books.created_6day_ago.count %></th>
+    <th><%= @books.created_5day_ago.count %></th>
+    <th><%= @books.created_4day_ago.count %></th>
+    <th><%= @books.created_3day_ago.count %></th>
+    <th><%= @books.created_2day_ago.count %></th>
+    <th><%= @books.created_1day_ago.count %></th>
+    <th><%= @books.created_today.count %></th>
   </tr>
 </table>
 
@@ -34,13 +34,13 @@ var myChart = new Chart(ctx, {
       label: '一日ごとの本の投稿数',
       borderColor: 'rgba(0,0,255,0.5)',
       data: [
-        <%= @book_count_6day_ago %>,
-        <%= @book_count_5day_ago %>,
-        <%= @book_count_4day_ago %>,
-        <%= @book_count_3day_ago %>,
-        <%= @book_count_2day_ago %>,
-        <%= @book_count_1day_ago %>,
-        <%= @book_count_day %>],
+        <%= @books.created_6day_ago.count %>,
+        <%= @books.created_5day_ago.count %>,
+        <%= @books.created_4day_ago.count %>,
+        <%= @books.created_3day_ago.count %>,
+        <%= @books.created_2day_ago.count %>,
+        <%= @books.created_1day_ago.count %>,
+        <%= @books.created_today.count %>],
       tension: 0.2
       }
     ]
